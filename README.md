@@ -1,22 +1,12 @@
 # nginx-lua
 
-Attempt to create an nginx Docker image with LUA support.
-
-Current status: fails.
-
-How to reproduce:
+An nginx Docker image with Lua support.
 
 ```
 git clone https://github.com/marians/nginx-lua.git
 cd nginx-lua
 docker build -t nginx-lua .
-docker run --rm -ti nginx-lua
-```
-
-Currently this yields
-
-```
-nginx: [emerg] unknown directive "lua_shared_dict" in /etc/nginx/nginx.conf:1
+docker run --rm -ti -p 8000:80 nginx-lua
 ```
 
 The following packages are installed during the `docker build`:
